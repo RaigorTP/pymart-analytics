@@ -14,7 +14,7 @@ import time
 from functools import lru_cache, wraps
 from typing import Callable, TypeVar
 
-from app.core.models import Product, Order
+from app.core.models import Product
 
 F = TypeVar("F", bound=Callable)
 
@@ -313,9 +313,9 @@ def compare_fib(n: int) -> dict:
 
     # Дейін (баяу) — тек n <= 35 үшін
     if n <= 35:
-        result_slow, time_slow = benchmark(fib_slow, n)
+        _, time_slow = benchmark(fib_slow, n)
     else:
-        result_slow, time_slow = None, float("inf")
+        time_slow = float("inf")
 
     return {
         "n": n,
@@ -337,7 +337,7 @@ def compare_paths(rows: int, cols: int) -> dict:
     count_paths_fast.cache_clear()
 
     result_fast, time_fast = benchmark(count_paths_fast, rows, cols)
-    result_slow, time_slow = benchmark(count_paths_slow, rows, cols)
+    _, time_slow = benchmark(count_paths_slow, rows, cols)
 
     return {
         "grid": f"{rows}×{cols}",

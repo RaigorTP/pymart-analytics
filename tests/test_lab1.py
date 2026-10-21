@@ -31,7 +31,7 @@ from app.core.catalog import (
     total_catalog_value,
     update_rating,
 )
-from app.core.models import CartItem, Category, Discount, Order, Product
+from app.core.models import CartItem, Discount, Order, Product
 from app.core.reports import (
     average_order_value,
     build_sales_report,

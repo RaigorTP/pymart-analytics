@@ -12,7 +12,7 @@ from __future__ import annotations
 from functools import reduce
 from typing import Callable
 
-from app.core.models import Category, Product
+from app.core.models import Product
 
 
 # ---------------------------------------------------------------------------
