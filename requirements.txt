@@ -1,0 +1,5 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pytest>=8.0
+ruff>=0.6
+black>=24.0
